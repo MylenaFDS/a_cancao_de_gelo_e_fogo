@@ -1,0 +1,18 @@
+@use 'variaveis'; // Importação do arquivo de variáveis
+
+
+.hero {
+    padding: 5.6vw; // Espaçamento interno
+    min-height: 80vh; // Altura mínima
+    background-image: url(../images/hod-background_desktop.avif); // Imagem de fundo para desktop
+    text-align: center;
+    background-size: cover; // Cobertura total do fundo
+
+    @media (max-width: 768px) {
+        background-image: url(../images/hero_celular.jpeg); // Imagem de fundo para celular
+        padding-top: calc(50vw + 25px); // Cálculo do espaçamento superior
+        background-size: contain; // Tamanho de imagem de fundo para celular
+        background-repeat: no-repeat; // Não repetir a imagem de fundo
+        margin-top: -55px; // Margem superior negativa
+    }
+}

@@ -1,9 +1,10 @@
 {
-  "name": "a_cancao_de_gelo_e_fogo",
+  "name": "house_of_the_dragon",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "gulp watch",
     "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

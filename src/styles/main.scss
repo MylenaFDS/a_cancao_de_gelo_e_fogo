@@ -1,5 +1,102 @@
-$bgColor:red;
+@use 'variaveis';
+@use 'hero';
+@use 'shows';
 
-body{
-    background-color: $bgColor;
+//Seletor
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+//Estilizações:
+    //Estilização do corpo do projeto:
+    body{
+        background-color:variaveis.$corDeFundo;
+        
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between; /* Adicionado para separar os elementos */
+        align-items: center;
+        font-size: 40px;
+    
+        img {
+            max-width: 370px;
+            margin-left: 10px;
+            
+        }
+    
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center; /* Adicionado para alinhar verticalmente com a imagem */
+            margin-right: 10px;
+    
+            li {
+                margin-right: 20px;
+    
+                &:last-child {
+                    margin-right: 0;
+                }
+    
+                a {
+                    text-decoration: none;
+                    color: variaveis.$corBotoesNav;
+                }
+            }
+        }
+    }
+    
+    
+    //mixins:
+        @mixin text($fontSize:16px){
+            font-size:$fontSize;
+            line-height:$fontSize + 10px;
+            color:variaveis.$corTextoPrincipal;
+        }
+
+        @mixin title($fontSize:40px){
+            @include text($fontSize);
+            color:variaveis.$corTextoSecundario;
+        }
+
+    //Classes
+        //Classes text
+            .text--big{
+                @include text(18px);
+            }
+
+            .text{
+                @include text;
+            }
+
+            .text--small{
+                @include text(12px);
+            }
+
+        //Classe link-text
+            .link-text{
+                @include text(18px);
+                color:variaveis.$corTextoSecundario;
+                text-decoration: underline;
+            }
+
+        //Classes title
+            .title--big{
+                @include title(44px);
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .title{
+                @include title;
+            }
+
+            .title--small{
+                @include title(28px);
+            }

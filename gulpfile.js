@@ -13,7 +13,7 @@ function styles() {
 }
 
 function images() {
-    return gulp.src('./src/images/**/*') // Seleciona todas as imagens na pasta images e suas subpastas
+    return gulp.src('./src/images/**/*',{ encoding: false }) // Seleciona todas as imagens na pasta images e suas subpastas
         .pipe(imagemin()) // Otimiza as imagens
         .pipe(gulp.dest('./dist/images')); // Salva as imagens otimizadas na pasta images dentro de dist
 }
