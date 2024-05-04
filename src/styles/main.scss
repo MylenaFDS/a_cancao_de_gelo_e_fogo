@@ -1,6 +1,6 @@
 @use 'variaveis';
 @use 'hero';
-@use 'carousel';
+@use 'shows';
 
 @font-face {
     font-family: "Game of Thrones";
@@ -24,16 +24,17 @@ nav {
     justify-content: space-between;
     align-items: center;
     font-family: "Game of Thrones", Arial, sans-serif; /* Font fallback*/
-    font-size: 30px;
+    font-size: 20px;
 
     img {
         max-width: 370px;
         margin-left: 10px;
+       
     }
 
     ul {
         list-style-type: none;
-        margin-top: 40px;
+        margin-top: 50px;
         display: flex;
         align-items: center;
         margin-right: 10px;
@@ -63,7 +64,12 @@ p{
     text-align: center;
     margin-top: 20px;
     color: variaveis.$corTextoPrincipal;
+
+    &.personagem{
+        margin-top: 5px;
+    }
 }
+
 // mixins
 @mixin text($fontSize: 16px) {
     font-size: $fontSize;

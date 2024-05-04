@@ -1,0 +1,63 @@
+@use 'variaveis';
+
+.elenco {
+    .carousel-container {
+        position: relative;
+        overflow: hidden;
+        margin-top: 44px;
+        margin-left: 20px;
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            .carousel-item {
+                flex: 0 0 calc(25% - 20px); // Largura de 25% menos o espaço entre as imagens
+                margin-right: 20px; // Espaço entre as imagens
+                img {
+                    width: 200px; // Define a largura da imagem como 100% do contêiner
+                    height: 300px; // Altura automática para manter a proporção
+                    border-radius: 5px;
+                }
+                    
+                .card {
+                    text-align: center;
+                    margin-top: 50px;
+                    margin-left: 10px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ajuste o deslocamento vertical para 4px
+                    padding: 10px;
+                    margin-bottom: 5px; // Margem inferior para separar os cards
+                    cursor: pointer;
+                    transition: box-shadow 0.3s ease; // Adiciona uma transição suave para a sombra do box
+                
+                    &:hover {
+                        box-shadow: 0 8px 16px #fff; // Sombra mais pronunciada quando o mouse está sobre o card
+                    }
+                }
+            }
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+    
+            &.prev-btn {
+                left: 10px;
+                &.hidden {
+                    display: none;
+                }
+            }
+    
+            &.next-btn {
+                right: 10px;
+            }
+        }
+    }
+}
