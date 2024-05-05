@@ -5,58 +5,57 @@
         position: relative;
         overflow: hidden;
         margin-top: 44px;
-        margin-left: 20px;
+        margin-left: auto;
+        margin-right: auto; // Centraliza horizontalmente o carrossel
+        max-width: 1200px; // Define uma largura máxima para o carrossel
+        
         .carousel {
             display: flex;
             transition: transform 0.5s ease;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-
+            gap: 20px; // Espaçamento entre os cards
+            
             .carousel-item {
                 flex: 0 0 calc(25% - 20px); // Largura de 25% menos o espaço entre as imagens
-                margin-right: 20px; // Espaço entre as imagens
+                
                 img {
-                    width: 200px; // Define a largura da imagem como 100% do contêiner
-                    height: 300px; // Altura automática para manter a proporção
+                    width: 200px; // Ajusta a largura da imagem para preencher o card
+                    height: 200px; // Altura automática para manter a proporção
                     border-radius: 5px;
                 }
-                    
-                .card {
-                    text-align: center;
-                    margin-top: 50px;
-                    margin-left: 10px;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ajuste o deslocamento vertical para 4px
-                    padding: 10px;
-                    margin-bottom: 5px; // Margem inferior para separar os cards
-                    cursor: pointer;
-                    transition: box-shadow 0.3s ease; // Adiciona uma transição suave para a sombra do box
                 
+                .card {
+                    width: 100%; // Define a largura do card como 100% do contêiner
+                    text-align: center;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: box-shadow 0.3s ease; // Transição suave
+                    
                     &:hover {
-                        box-shadow: 0 8px 16px #fff; // Sombra mais pronunciada quando o mouse está sobre o card
+                        box-shadow: 0 8px 16px #fff; // Sombra mais pronunciada ao passar o mouse
                     }
                 }
             }
         }
-
+        
         .carousel-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: transparent;
             color: white;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
-    
+            z-index: 1;
+            
             &.prev-btn {
-                left: 10px;
-                &.hidden {
-                    display: none;
-                }
+                left: 5px; // Posiciona o botão de anterior à esquerda
             }
-    
+            
             &.next-btn {
-                right: 10px;
+                right: 10px; // Posiciona o botão de próximo à direita
             }
         }
     }
