@@ -52,7 +52,7 @@
     </h3>
     
     <div class="carousel-container">
-        <button class="carousel-btn prev-btn hidden" onclick="prevSlide()">&#10094;</button>
+        
         <div class="carousel">
             
             <div class="carousel-item">
@@ -97,10 +97,22 @@
                     <p class="personagem">Emily Carey/Olivia Cooke como Alicent Hightower</p>
                 </div>
             </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <img src="./dist/images/characters/aegonII.jpg" alt="Aegon II">
+                    <p class="personagem">Ty Tennant/Tom Glynn-Carney como Aegon II</p>
+                </div>
+            </div>
         </div>
+        <button class="carousel-btn prev-btn hidden" onclick="prevSlide()">&#10094;</button>
         <button class="carousel-btn next-btn" onclick="nextSlide()">&#10095;</button>
+    <div class="carousel-indicators">
+        <button type="button" class="active" onclick="goToSlide(0)"></button>
+        <button type="button" onclick="goToSlide(1)"></button>
+        <button type="button" onclick="goToSlide(2)"></button>
+        <button type="button" onclick="goToSlide(3)"></button>
     </div>
-    
+    </div>
 
 
 </section>
