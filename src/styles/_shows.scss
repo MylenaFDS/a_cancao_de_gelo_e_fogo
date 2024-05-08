@@ -15,7 +15,7 @@
             gap: 20px; // Espaçamento entre os cards
             max-width: 1200px;
             
-            .carousel-item {
+            &-item {
                 flex: 0 0 calc(25% - 20px); // Largura de 25% menos o espaço entre as imagens
                 padding: 20px;
                 
@@ -63,5 +63,21 @@
                 
             }
         }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            margin-top: 10px; /* Adicione um espaçamento superior conforme necessário */
+
+            & button {
+                margin: 0 5px; /* Adicione um espaçamento horizontal entre os botões conforme necessário */
+                padding: 5px;
+                padding-bottom: 5px;
+                cursor: pointer;
+            }
+        }
+        
+        
+        
     }
 }
