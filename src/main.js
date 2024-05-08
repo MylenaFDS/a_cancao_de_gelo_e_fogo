@@ -47,6 +47,27 @@ function updateButtonsVisibility() {
     }
 }
 
+function nextSlide() {
+    // Verifica se há mais slides para avançar
+    if (counter < Math.ceil(totalSlides / 4) - 1) {
+        counter++;
+        carousel.style.transform = `translateX(-${counter * 100}%)`;
+        prevBtn.classList.remove('hidden');
+    } else {
+        // Volta para o primeiro slide
+        counter = 0;
+        carousel.style.transform = `translateX(0)`;
+        prevBtn.classList.add('hidden');
+    }
+
+    // Verifica se é o último slide
+    if (counter === Math.ceil(totalSlides / 4) - 1) {
+        nextBtn.classList.add('hidden');
+    } else {
+        nextBtn.classList.remove('hidden');
+    }
+}
+
 
 
 
