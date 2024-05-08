@@ -104,50 +104,18 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-btn prev-btn hidden" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-btn prev-btn hidden" onclick="prevSlide()">&#10094;</button>            
         <button class="carousel-btn next-btn" onclick="nextSlide()">&#10095;</button>
     <div class="carousel-indicators">
         <button type="button" class="active" onclick="goToSlide(0)"></button>
         <button type="button" onclick="goToSlide(1)"></button>
-        <button type="button" onclick="goToSlide(2)"></button>
-        <button type="button" onclick="goToSlide(3)"></button>
+        
     </div>
     </div>
 
 
 </section>
 <script src="./src/main.js"></script>
-<script>
-    var slideIndex = 0;
-    var slides = document.querySelectorAll('.carousel-item');
-    var totalSlides = slides.length;
 
-    function showSlide(index) {
-        if (index < 0) {
-            slideIndex = totalSlides - 1;
-        } else if (index >= totalSlides) {
-            slideIndex = 0;
-        }
-
-        for (var i = 0; i < totalSlides; i++) {
-            slides[i].classList.remove('active');
-        }
-
-        slides[slideIndex].classList.add('active');
-    }
-
-    function prevSlide() {
-        slideIndex--;
-        showSlide(slideIndex);
-    }
-
-    function nextSlide() {
-        slideIndex++;
-        showSlide(slideIndex);
-    }
-
-    // Mostrar primeiro slide ao carregar a página
-    showSlide(slideIndex);
-</script>
 </body>
 </html>
