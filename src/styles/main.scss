@@ -3,7 +3,7 @@
 @use 'shows';
 
 @font-face {
-    font-family: "Game of Thrones";
+    font-family: variaveis.$fontePrincipal;
     src: url("../../assets/fonts/Game of Thrones.ttf");
     font-weight: 700;
 }
@@ -54,9 +54,10 @@ body {
     h2,h3{
         text-align: center;
         margin-top: 20px;
-        font-family: "Game of Thrones", Arial, sans-serif; /* Font fallback*/
+        font-family: variaveis.$fontePrincipal, Arial, sans-serif;
     }
 
+   
     section{
         padding: 20px;
         
@@ -132,6 +133,10 @@ body {
 
 .title--big {
     @include title(44px);
+    font-family: variaveis.$fontePrincipal, sans-serif; /* Sua fonte principal */
+        font-feature-settings: 'liga' 1, 'calt' 0; /* Ativa ligaduras e desativa alternativas contextuais */
+    
+    
     
 }
 
