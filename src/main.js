@@ -1,6 +1,7 @@
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 const carousel = document.querySelector('.carousel');
+const slides = carousel.querySelectorAll('.slide');
 let counter = 0;
 
 nextBtn.addEventListener('click', () => {
@@ -9,7 +10,7 @@ nextBtn.addEventListener('click', () => {
     prevBtn.classList.remove('hidden');
 
     // Verifica se o contador atingiu o número máximo de slides
-    if (counter === Math.ceil(totalSlides / 4) - 1) {
+    if (counter === Math.ceil(slides.length / 4) - 1) {
         nextBtn.classList.add('hidden');
     }
 });
@@ -40,7 +41,7 @@ function updateButtonsVisibility() {
         prevBtn.classList.remove('hidden');
     }
 
-    if (counter === Math.ceil(totalSlides / 4) - 1) {
+    if (counter === Math.ceil(slides.length / 4) - 1) {
         nextBtn.classList.add('hidden');
     } else {
         nextBtn.classList.remove('hidden');
@@ -49,7 +50,7 @@ function updateButtonsVisibility() {
 
 function nextSlide() {
     // Verifica se há mais slides para avançar
-    if (counter < Math.ceil(totalSlides / 4) - 1) {
+    if (counter < Math.ceil(slides.length / 4) - 1) {
         counter++;
         carousel.style.transform = `translateX(-${counter * 100}%)`;
         prevBtn.classList.remove('hidden');
@@ -59,15 +60,5 @@ function nextSlide() {
         carousel.style.transform = `translateX(0)`;
         prevBtn.classList.add('hidden');
     }
-
-    // Verifica se é o último slide
-    if (counter === Math.ceil(totalSlides / 4) - 1) {
-        nextBtn.classList.add('hidden');
-    } else {
-        nextBtn.classList.remove('hidden');
-    }
+    updateButtonsVisibility();
 }
-
-
-
-
