@@ -1,0 +1,84 @@
+@use 'variaveis';
+
+.elenco {
+    .carousel-container {
+        position: relative;
+        overflow: hidden;
+        margin-top: 44px;
+        margin-left: auto;
+        margin-right: auto; // Centraliza horizontalmente o carrossel
+        max-width: 1200px; // Define uma largura máxima para o carrossel
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 20px; // Espaçamento entre os cards
+            max-width: 1200px;
+            
+            &-item {
+                flex: 0 0 calc(25% - 20px); // Largura de 25% menos o espaço entre as imagens
+                padding: 20px;
+                
+                img {
+                    width: 200px; // Ajusta a largura da imagem para preencher o card
+                    height: 200px; // Altura automática para manter a proporção
+                    border-radius: 5px;
+                }
+                
+                .card {
+                    margin-left: auto;
+                    width: 220px; // Define a largura do card como 100% do contêiner
+                    text-align: center;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: box-shadow 0.3s ease; // Transição suave
+                    
+                    &:hover {
+                        box-shadow: 0 4px 8px 16px #fff; // Sombra mais pronunciada ao passar o mouse
+                        background-color: #8b0000
+                    }
+                }
+            }
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            z-index: 1;
+            
+            &.prev-btn {
+                left: -20px; // Posiciona o botão de anterior à esquerda
+                
+            }
+            
+            &.next-btn {
+                right: -20px; // Posiciona o botão de próximo à direita
+                
+            }
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            margin-top: 10px; /* Adicione um espaçamento superior conforme necessário */
+
+            & button {
+                margin: 0 5px; /* Adicione um espaçamento horizontal entre os botões conforme necessário */
+                padding: 5px;
+                padding-bottom: 5px;
+                cursor: pointer;
+            }
+        }
+        
+        
+        
+    }
+}

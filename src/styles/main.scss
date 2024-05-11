@@ -1,9 +1,10 @@
 @use 'variaveis';
 @use 'hero';
+@use 'elenco';
 @use 'shows';
 
 @font-face {
-    font-family: variaveis.$fontePrincipal;
+    font-family: "Game of Thrones";
     src: url("../../assets/fonts/Game of Thrones.ttf");
     font-weight: 700;
 }
@@ -12,7 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    
 }
 
 body {
@@ -54,10 +55,9 @@ body {
     h2,h3{
         text-align: center;
         margin-top: 20px;
-        font-family: variaveis.$fontePrincipal, Arial, sans-serif;
+        font-family:"Game of Thrones",  Arial, sans-serif;
     }
-
-   
+    
     section{
         padding: 20px;
         
@@ -133,7 +133,7 @@ body {
 
 .title--big {
     @include title(44px);
-    font-family: variaveis.$fontePrincipal, sans-serif; /* Sua fonte principal */
+    font-family: "Game of Thrones", sans-serif; /* Sua fonte principal */
         font-feature-settings: 'liga' 1, 'calt' 0; /* Ativa ligaduras e desativa alternativas contextuais */
     
     
