@@ -62,3 +62,21 @@ function nextSlide() {
     }
     updateButtonsVisibility();
 }
+
+
+// Seleciona o botão e o container do botão da primeira temporada
+const temporada1Button = document.querySelector('.temporada_1-button');
+const temporada1ButtonContainer = document.getElementById('temporada_1-button-container');
+
+// Esconde o botão da primeira temporada ao carregar a página
+temporada1ButtonContainer.style.display = 'none';
+
+// Adiciona um evento de clique para alternar a visibilidade do botão da primeira temporada
+document.querySelector('[data-tab-button="temporada_1"]').addEventListener('click', function() {
+    // Se a aba da primeira temporada estiver ativa, exibe o botão, caso contrário, oculta
+    if (temporada1ButtonContainer.style.display === 'none') {
+        temporada1ButtonContainer.style.display = 'block';
+    } else {
+        temporada1ButtonContainer.style.display = 'none';
+    }
+});
