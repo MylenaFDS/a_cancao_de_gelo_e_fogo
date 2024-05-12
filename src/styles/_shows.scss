@@ -13,7 +13,7 @@
 
         div{
             max-width: 320px;
-            margin: auto;
+            margin-left: 60px;
 
             
         }
@@ -71,9 +71,11 @@
         display: flex; // Define o layout como flexível
         justify-content: center; // Centraliza horizontalmente o conteúdo
         text-align: center; // Centraliza verticalmente o conteúdo
+        
     }
     
     .temporada_1-button {
+        
         padding: 15px 30px; // Aumento do espaçamento interno do botão
         font-size: 18px; // Aumento do tamanho da fonte
         background-color: variaveis.$corBotao; // Cor de fundo do botão
