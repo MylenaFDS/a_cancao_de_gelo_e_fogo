@@ -66,6 +66,28 @@
             }
         }
     }
+    .button-container {
+        margin-top: 30px; // Espaçamento superior aumentado
+        display: flex; // Define o layout como flexível
+        justify-content: center; // Centraliza horizontalmente o conteúdo
+        text-align: center; // Centraliza verticalmente o conteúdo
+    }
+    
+    .temporada_1-button {
+        padding: 15px 30px; // Aumento do espaçamento interno do botão
+        font-size: 18px; // Aumento do tamanho da fonte
+        background-color: variaveis.$corBotao; // Cor de fundo do botão
+        color: #fff; // Cor do texto do botão
+        border: solid; // Remove a borda do botão
+        border-radius: 6px; // Borda arredondada
+        cursor: pointer; // Altera o cursor para indicar que o botão é clicável
+        transition: background-color 0.3s; // Transição suave da cor de fundo ao passar o mouse
+    
+        &:hover {
+            background-color: variaveis.$corBotaoHover; // Altera a cor de fundo ao passar o mouse
+        }
+    }
+    
 }
 
 
