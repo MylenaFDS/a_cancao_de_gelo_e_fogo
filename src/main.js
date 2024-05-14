@@ -64,22 +64,35 @@ function nextSlide() {
 }
 
 
-// Seleciona o botão e o container do botão da primeira temporada
-const temporada1Button = document.querySelector('.temporada_1-button');
-const temporada1ButtonContainer = document.getElementById('temporada_1-button-container');
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.shows__tabs__button');
+    const watchButton = document.getElementById('watch-full-season-button');
 
-// Esconde o botão da primeira temporada ao carregar a página
-temporada1ButtonContainer.style.display = 'none';
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            tabButtons.forEach(btn => btn.classList.remove('shows__tabs__button--is-active'));
+            
+            // Add active class to the clicked button
+            this.classList.add('shows__tabs__button--is-active');
 
-// Adiciona um evento de clique para alternar a visibilidade do botão da primeira temporada
-document.querySelector('[data-tab-button="temporada_1"]').addEventListener('click', function() {
-    // Se a aba da primeira temporada estiver ativa, exibe o botão, caso contrário, oculta
-    if (temporada1ButtonContainer.style.display === 'none') {
-        temporada1ButtonContainer.style.display = 'block';
+            // Show or hide the watch button based on the active tab
+            if (this.dataset.tabButton === 'temporada_1') {
+                watchButton.style.display = 'block';
+            } else {
+                watchButton.style.display = 'none';
+            }
+        });
+    });
+
+    // Initial check to show or hide the button based on the initially active tab
+    if (document.querySelector('.shows__tabs__button--is-active').dataset.tabButton === 'temporada_1') {
+        watchButton.style.display = 'block';
     } else {
-        temporada1ButtonContainer.style.display = 'none';
+        watchButton.style.display = 'none';
     }
 });
+
 document.addEventListener('DOMContentLoaded',function() {
     const buttons = document.querySelectorAll('[data-tab-button]');
     
