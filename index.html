@@ -47,15 +47,12 @@
 </div>
 </section>
 <section class="elenco" id="elenco">
-    <h3 class="title--small">
-        Elenco
-    </h3>
+    <h3 class="title--small">Elenco</h3>
     <div class="carousel-container">
-        
-        <div class="carousel slide">
-            
+        <button class="carousel-btn prev-btn">❮</button>
+        <div class="carousel">
             <div class="carousel-item">
-                <div class="card active">
+                <div class="card">
                     <img src="./dist/images/characters/viserys.jpg" alt="Viserys">
                     <p class="personagem">Paddy Considine como Viserys Targaryen</p>
                 </div>
@@ -127,16 +124,16 @@
                 </div>
             </div>
         </div>
-        
+        <button class="carousel-btn next-btn">❯</button>
         <div class="carousel-indicators">
             <button type="button" class="active" onclick="goToSlide(0)"></button>
             <button type="button" onclick="goToSlide(1)"></button>
             <button type="button" onclick="goToSlide(2)"></button>
         </div>
     </div>
-
-
 </section>
+
+
 <section class="shows" id="temporadas">
     <h3 class="title--small">
         Temporadas

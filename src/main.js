@@ -1,32 +1,53 @@
-function goToSlide(index) {
-    counter = index;
-    carousel.style.transform = `translateX(-${counter * 100}%)`;
-    updateButtonsVisibility();
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const carousel = document.querySelector('.carousel');
+    const slides = carousel.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.carousel-indicators button');
+    let counter = 0;
 
-function updateButtonsVisibility() {
-    if (counter === 0) {
-        prevBtn.classList.add('hidden');
-    } else {
-        prevBtn.classList.remove('hidden');
+    function updateCarousel() {
+        const totalSlides = 1; // Dividido em 3 slides
+        const percentage = (100 / totalSlides) * counter;
+        carousel.style.transform = `translateX(-${percentage}%)`;
+        updateButtonsVisibility();
+        updateIndicators();
     }
 
-    if (counter === Math.ceil(slides.length / 4) - 1) {
-        nextBtn.classList.add('hidden');
-    } else {
-        nextBtn.classList.remove('hidden');
+    function updateButtonsVisibility() {
+        prevBtn.style.display = counter === 0 ? 'none' : 'block';
+        nextBtn.style.display = counter === 2 ? 'none' : 'block';
     }
-}
 
-function nextSlide() {
-    if (counter < Math.ceil(slides.length / 4) - 1) {
-        counter++;
-    } else {
-        counter = 0;
+    function updateIndicators() {
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === counter);
+        });
     }
-    carousel.style.transform = `translateX(-${counter * 100}%)`;
-    updateButtonsVisibility();
-}
+
+    prevBtn.addEventListener('click', () => {
+        if (counter > 0) {
+            counter--;
+            updateCarousel();
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (counter < 2) {
+            counter++;
+            updateCarousel();
+        }
+    });
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            counter = index;
+            updateCarousel();
+        });
+    });
+
+    updateCarousel();
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('[data-tab-button]');
