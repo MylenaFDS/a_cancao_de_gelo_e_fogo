@@ -2,11 +2,11 @@
 
 .shows {
     padding: 2vw 5.6vw;
-    max-width: 1200px; 
-    
+    max-width: 1200px;
 
-    h3{
+    h3 {
         margin-left: 100px;
+        color: #fff;
     }
 
     &__list {
@@ -15,11 +15,10 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
 
-        div{
+        div {
             max-width: 320px;
             margin-left: 100px;
-
-            
+            margin-top: 40px;
         }
 
         &--is-active {
@@ -32,30 +31,27 @@
                 width: 320px;
                 border-radius: 4px;
                 align-items: center;
-
-                
             }
 
             h4 {
                 margin-top: 5px;
                 color: variaveis.$corTituloH4;
                 text-align: justify;
+
+                
             }
 
-            p{
+            p {
                 text-align: justify;
             }
         }
-
-        
     }
 
     &__tabs {
         display: flex;
         justify-content: center;
-        
+
         &__button {
-            
             color: variaveis.$corTextoSecundario;
             font-size: 20px;
             border: none;
@@ -63,38 +59,69 @@
             background: none;
             text-transform: uppercase;
             margin: 0 1vw;
+            margin-top: 40px;
             cursor: pointer;
             border-bottom: 5px solid transparent;
-
+            text-align: center;
+            margin-left: 100px;
+            
             &--is-active {
                 border-color: variaveis.$corTextoSecundario;
             }
         }
     }
+
     .button-container {
-        margin-top: 30px; // Espaçamento superior aumentado
-        display: flex; // Define o layout como flexível
-        justify-content: center; // Centraliza horizontalmente o conteúdo
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
         margin-left: 100px;
-        
-    }
-    
-    .temporada_1-button {
-        
-        padding: 15px 30px; // Aumento do espaçamento interno do botão
-        font-size: 18px; // Aumento do tamanho da fonte
-        background-color: variaveis.$corBotao; // Cor de fundo do botão
-        color: #fff; // Cor do texto do botão
-        border: solid; // Remove a borda do botão
-        border-radius: 6px; // Borda arredondada
-        cursor: pointer; // Altera o cursor para indicar que o botão é clicável
-        transition: background-color 0.3s; // Transição suave da cor de fundo ao passar o mouse
-    
-        &:hover {
-            background-color: variaveis.$corBotaoHover; // Altera a cor de fundo ao passar o mouse
+
+        .temporada_1-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: variaveis.$corBotao;
+            color: #fff;
+            border: solid;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Game of Thrones';
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: variaveis.$corBotaoHover;
+            }
         }
     }
-    
+
+
+    ul {
+        margin-top: 20px;
+
+        .temporada_2-trailer-verdes,
+        .temporada_2-trailer-pretos {
+            padding: 15px 30px;
+            
+            font-size: 18px;
+            background-color: variaveis.$corBotao;
+            color: #fff;
+            border: solid;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Game of Thrones';
+            text-transform: uppercase;
+            width: 500px;
+            margin-left: 20px;
+            justify-content: center;
+            
+            &:hover {
+                background-color: variaveis.$corBotaoHover;
+            }
+        }
+    }
 }
+
 
 
