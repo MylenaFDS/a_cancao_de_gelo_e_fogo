@@ -1,0 +1,21 @@
+@use 'variaveis';
+@use 'hero';
+@use 'elenco';
+@use 'shows';
+
+
+/* _footer.scss */
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+
+    .copyright {
+        margin-top: 20px;
+        text-align: center;
+        color: #999;
+        font-size: 18px;
+    }
+}
