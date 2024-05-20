@@ -113,9 +113,9 @@
             text-transform: uppercase;
             width: 500px;
             margin-left: 60px;
-            justify-content: space-around;
+            text-align: center;
             
-            
+
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
