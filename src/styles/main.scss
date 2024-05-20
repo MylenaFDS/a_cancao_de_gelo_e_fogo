@@ -115,6 +115,12 @@ body {
             margin-top: 10px;
         }
 
+        .comprar_livro-container {
+            display: flex;
+            justify-content: center;  // Centraliza horizontalmente
+            margin-top: 20px;  // Adiciona espaço superior para separação, se necessário
+        }
+        
         .comprar_livro {
             padding: 15px;
             font-size: 18px;
@@ -127,13 +133,13 @@ body {
             font-family: 'Game of Thrones';
             text-transform: uppercase;
             width: 500px;
-            display: flex;
             text-align: center;
-
+        
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
         }
+        
     }
 }
 
