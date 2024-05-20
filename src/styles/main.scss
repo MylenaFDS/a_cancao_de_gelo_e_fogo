@@ -14,38 +14,38 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 body {
     background-color: variaveis.$corDeFundo;
+    font-family: Arial, sans-serif;
+
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-family: "Game of Thrones", Arial, sans-serif; /* Font fallback*/
+        font-family: "Game of Thrones", Arial, sans-serif; /* Font fallback */
         font-size: 20px;
-    
+
         img {
             max-width: 370px;
             margin-left: 10px;
-           
         }
-    
+
         ul {
             list-style-type: none;
             margin-top: 50px;
             display: flex;
             align-items: center;
             margin-right: 20px;
-    
+
             li {
                 margin-right: 20px;
-    
+
                 &:last-child {
                     margin-right: 0;
                 }
-    
+
                 a {
                     text-decoration: none;
                     color: variaveis.$corBotoesNav;
@@ -53,33 +53,33 @@ body {
             }
         }
     }
-    h2,h3{
+
+    h2, h3 {
         text-align: center;
         margin-top: 20px;
-        font-family:"Game of Thrones",  Arial, sans-serif;
-        
+        font-family: "Game of Thrones", Arial, sans-serif;
     }
-    
-    section{
+
+    section {
         padding: 20px;
 
-        p{  
+        p {
             text-align: justify;
             margin-top: 20px;
             color: variaveis.$corTextoPrincipal;
             font-size: 18px;
-            
-            &.personagem{
+
+            &.personagem {
                 margin-top: 5px;
             }
 
-            &.text--big{
+            &.text--big {
                 margin-right: 100px;
                 margin-left: 100px;
             }
         }
     }
-    
+
     .sobre_o_livro {
         > div {
             .content-wrapper {
@@ -87,40 +87,39 @@ body {
                 align-items: flex-start;
                 justify-content: center;
                 gap: 20px; // Espaçamento entre a imagem e o texto
-                
+
                 @media (max-width: 768px) {
                     flex-direction: column;
                     align-items: center;
                 }
-    
+
                 .center-img {
                     max-width: 200px; // Tamanho máximo da imagem
                     height: auto;
                 }
-    
+
                 .text-wrapper {
                     max-width: 900px; // Largura máxima do texto
                 }
             }
         }
-    
+
         .sinopse-livro {
             margin-bottom: 20px;
             margin-right: 50px;
             margin-left: 50px;
         }
-        
+
         .title--small {
             margin-top: 20px;
         }
-    
+
         .text--big {
             margin-top: 10px;
         }
 
         .comprar_livro {
             padding: 15px 30px;
-            
             font-size: 18px;
             background-color: variaveis.$corBotao;
             color: #D2B48C;
@@ -133,87 +132,200 @@ body {
             width: 500px;
             margin-left: 50px;
             justify-content: center;
-            
+
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
         }
-        
     }
-    
 
-    // mixins
-@mixin text($fontSize: 16px) {
-    font-size: $fontSize;
-    line-height: $fontSize + 10px;
-    color: variaveis.$corTextoPrincipal;
+    // Media Queries
+   // Media Queries
+@media (max-width: 1199px) {
+    nav {
+        font-size: 18px;
+
+        img {
+            max-width: 300px;
+        }
+
+        ul {
+            margin-top: 40px;
+
+            li {
+                margin-right: 15px;
+
+                a {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    section {
+        p.text--big {
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+    }
 }
 
-@mixin title($fontSize: 40px) {
-    @include text($fontSize);
-    color: variaveis.$corTextoSecundario;
+@media (max-width: 991px) {
+    nav {
+        font-size: 16px;
+
+        img {
+            max-width: 250px;
+        }
+
+        ul {
+            margin-top: 30px;
+
+            li {
+                margin-right: 10px;
+
+                a {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    section {
+        p.text--big {
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+    }
+
+    .sobre_o_livro .comprar_livro {
+        width: 100%;
+        margin-left: 0;
+    }
 }
 
-// Classes
-.text--big {
-    @include text(18px);
+@media (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+
+        img {
+            max-width: 200px;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-top: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 0;
+
+            li {
+                margin-right: 0;
+                margin-bottom: 10px;
+
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    section {
+        p.text--big {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+    }
+
+    .sobre_o_livro .comprar_livro {
+        width: 100%;
+        margin-left: 0;
+    }
 }
 
-.text {
-    @include text;
-}
-}
+@media (max-width: 575px) {
+    nav {
+        font-size: 14px;
 
+        img {
+            max-width: 150px;
+        }
 
+        ul {
+            margin-top: 10px;
 
+            li {
+                a {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 
+    section {
+        p {
+            font-size: 14px;
+        }
 
+        p.text--big {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
 
-
-// mixins
-@mixin text($fontSize: 16px) {
-    font-size: $fontSize;
-    line-height: $fontSize + 10px;
-    color: variaveis.$corTextoPrincipal;
-}
-
-@mixin title($fontSize: 40px) {
-    @include text($fontSize);
-    color: variaveis.$corTextoSecundario;
-}
-
-// Classes
-.text--big {
-    @include text(18px);
-}
-
-.text {
-    @include text;
-}
-
-.text--small {
-    @include text(12px);
-}
-
-.link-text {
-    @include text(18px);
-    color: variaveis.$corTextoSecundario;
-    text-decoration: underline;
+    .sobre_o_livro .comprar_livro {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 }
 
-.title--big {
-    @include title(44px);
-    font-family: "Game of Thrones", sans-serif; /* Sua fonte principal */
+
+    // Mixins
+    @mixin text($fontSize: 16px) {
+        font-size: $fontSize;
+        line-height: $fontSize + 10px;
+        color: variaveis.$corTextoPrincipal;
+    }
+
+    @mixin title($fontSize: 40px) {
+        @include text($fontSize);
+        color: variaveis.$corTextoSecundario;
+    }
+
+    // Classes
+    .text--big {
+        @include text(18px);
+    }
+
+    .text {
+        @include text;
+    }
+
+    .text--small {
+        @include text(12px);
+    }
+
+    .link-text {
+        @include text(18px);
+        color: variaveis.$corTextoSecundario;
+        text-decoration: underline;
+    }
+
+    .title--big {
+        @include title(44px);
+        font-family: "Game of Thrones", sans-serif; /* Sua fonte principal */
         font-feature-settings: 'liga' 1, 'calt' 0; /* Ativa ligaduras e desativa alternativas contextuais */
-    
-    
-    
-}
+    }
 
-.title {
-    @include title;
-}
+    .title {
+        @include title;
+    }
 
-.title--small {
-    @include title(28px);
+    .title--small {
+        @include title(28px);
+    }
 }

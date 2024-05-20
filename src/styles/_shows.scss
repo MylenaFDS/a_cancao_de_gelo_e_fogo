@@ -38,7 +38,6 @@
                 color: variaveis.$corTextoSecundario;
                 text-align: justify;
                 font-size: 20px;
-                
             }
 
             p {
@@ -64,7 +63,7 @@
             border-bottom: 5px solid transparent;
             text-align: center;
             margin-left: 100px;
-            
+
             &--is-active {
                 border-color: variaveis.$corTextoSecundario;
             }
@@ -89,16 +88,16 @@
             font-family: 'Game of Thrones';
             text-transform: uppercase;
             margin-left: 80px;
+            
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
         }
     }
 
-
     ul {
         margin-top: 20px;
-        
+
         .temporada_2-trailer-verdes,
         .temporada_2-trailer-pretos {
             padding: 15px 30px;
@@ -114,14 +113,142 @@
             width: 500px;
             margin-left: 60px;
             justify-content: center;
-            
+
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
-            
+        }
+    }
+
+    // Media Queries
+    @media (max-width: 1199px) {
+        h3 {
+            margin-left: 50px;
+        }
+
+        &__list {
+            grid-template-columns: 1fr 1fr;
+
+            div {
+                margin-left: 50px;
+            }
+        }
+
+        &__tabs__button {
+            margin-left: 50px;
+        }
+
+        .button-container {
+            margin-left: 50px;
+        }
+
+        ul .temporada_2-trailer-verdes,
+        ul .temporada_2-trailer-pretos {
+            width: 400px;
+            margin-left: 30px;
+        }
+    }
+
+    @media (max-width: 991px) {
+        padding: 2vw 3.6vw;
+
+        h3 {
+            margin-left: 20px;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+
+            div {
+                margin-left: 20px;
+            }
+        }
+
+        &__tabs {
+            flex-direction: column;
+
+            &__button {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+        }
+
+        .button-container {
+            margin-left: 20px;
+        }
+
+        ul .temporada_2-trailer-verdes,
+        ul .temporada_2-trailer-pretos {
+            width: 300px;
+            margin-left: 20px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        h3 {
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        &__list {
+            div {
+                margin-left: 10px;
+            }
+        }
+
+        &__tabs__button {
+            font-size: 18px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .button-container {
+            margin-left: 10px;
+        }
+
+        ul .temporada_2-trailer-verdes,
+        ul .temporada_2-trailer-pretos {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 575px) {
+        h3 {
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        &__list {
+            div {
+                margin-left: 5px;
+            }
+
+            &__item {
+                h4 {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &__tabs__button {
+            font-size: 16px;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        .button-container {
+            margin-left: 5px;
+        }
+
+        ul .temporada_2-trailer-verdes,
+        ul .temporada_2-trailer-pretos {
+            width: 100%;
+            margin-left: 0;
         }
     }
 }
-
-
-
