@@ -74,36 +74,7 @@
 
     // Media Queries
 
-    @media (max-width: 1199px) {
-        .carousel {
-            &-item {
-                flex: 0 0 calc(33.33% - 20px); // 3 itens por linha
-            }
-        }
-    }
-
-    @media (max-width: 991px) {
-        .carousel-container {
-            max-width: 900px; // Ajuste da largura máxima para tablets
-        }
-
-        .carousel {
-            &-item {
-                flex: 0 0 calc(50% - 20px); // 2 itens por linha
-            }
-        }
-
-        .carousel-btn {
-            font-size: 1.5rem;
-            &.prev-btn {
-                left: 0; // Ajuste para caber na tela menor
-            }
-
-            &.next-btn {
-                right: 0; // Ajuste para caber na tela menor
-            }
-        }
-    }
+   
 
     @media (max-width: 767px) {
         .carousel-container {
@@ -131,30 +102,6 @@
         }
     }
 
-    @media (max-width: 575px) {
-        .carousel-container {
-            max-width: 100%; // Ajuste da largura máxima para smartphones pequenos
-            padding: 0 10px; // Adiciona um pouco de padding horizontal
-        }
-
-        .carousel {
-            &-item {
-                padding: 5px;
-
-                img {
-                    width: 100%; // Ajusta a largura da imagem para preencher o card
-                    height: auto; // Mantém a proporção da imagem
-                }
-
-                .card {
-                    width: 100%; // Ajusta a largura do card para preencher o contêiner
-                }
-            }
-        }
-
-        .carousel-btn {
-            font-size: 1rem;
-        }
-    }
+    
 }
 
