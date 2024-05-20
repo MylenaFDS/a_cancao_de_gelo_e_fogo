@@ -14,38 +14,38 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 body {
     background-color: variaveis.$corDeFundo;
+    overflow-y: hidden;
+
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-family: "Game of Thrones", Arial, sans-serif; /* Font fallback*/
+        font-family: "Game of Thrones", Arial, sans-serif;
         font-size: 20px;
-    
+
         img {
             max-width: 370px;
             margin-left: 10px;
-           
         }
-    
+
         ul {
             list-style-type: none;
             margin-top: 50px;
             display: flex;
             align-items: center;
             margin-right: 20px;
-    
+
             li {
                 margin-right: 20px;
-    
+
                 &:last-child {
                     margin-right: 0;
                 }
-    
+
                 a {
                     text-decoration: none;
                     color: variaveis.$corBotoesNav;
@@ -53,74 +53,70 @@ body {
             }
         }
     }
-    h2,h3{
+
+    h2, h3 {
         text-align: center;
         margin-top: 20px;
-        font-family:"Game of Thrones",  Arial, sans-serif;
-        
+        font-family: "Game of Thrones", Arial, sans-serif;
     }
-    
-    section{
+
+    section {
         padding: 20px;
 
-        p{  
+        p {
             text-align: justify;
             margin-top: 20px;
             color: variaveis.$corTextoPrincipal;
             font-size: 18px;
-            
-            &.personagem{
+
+            &.personagem {
                 margin-top: 5px;
             }
 
-            &.text--big{
-                margin-right: 100px;
-                margin-left: 100px;
+            &.text--big {
+                margin: 0 100px;
             }
         }
     }
-    
+
     .sobre_o_livro {
         > div {
             .content-wrapper {
                 display: flex;
                 align-items: flex-start;
                 justify-content: center;
-                gap: 20px; // Espaçamento entre a imagem e o texto
-                
+                gap: 20px;
+
                 @media (max-width: 768px) {
                     flex-direction: column;
                     align-items: center;
                 }
-    
+
                 .center-img {
-                    max-width: 200px; // Tamanho máximo da imagem
+                    max-width: 200px;
                     height: auto;
                 }
-    
+
                 .text-wrapper {
-                    max-width: 900px; // Largura máxima do texto
+                    max-width: 900px;
                 }
             }
         }
-    
+
         .sinopse-livro {
-            margin-bottom: 20px;
-            margin-right: 50px;
-            margin-left: 50px;
+            margin: 0 50px 20px;
         }
-        
+
         .title--small {
             margin-top: 20px;
         }
-    
+
         .text--big {
             margin-top: 10px;
         }
 
         .comprar_livro {
             padding: 15px 30px;
-            
             font-size: 18px;
             background-color: variaveis.$corBotao;
             color: #D2B48C;
@@ -132,45 +128,17 @@ body {
             text-transform: uppercase;
             width: 500px;
             margin-left: 50px;
+            display: flex;
             justify-content: center;
-            
+
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
         }
-        
     }
-    
-
-    // mixins
-@mixin text($fontSize: 16px) {
-    font-size: $fontSize;
-    line-height: $fontSize + 10px;
-    color: variaveis.$corTextoPrincipal;
 }
 
-@mixin title($fontSize: 40px) {
-    @include text($fontSize);
-    color: variaveis.$corTextoSecundario;
-}
-
-// Classes
-.text--big {
-    @include text(18px);
-}
-
-.text {
-    @include text;
-}
-}
-
-
-
-
-
-
-
-// mixins
+// Mixins
 @mixin text($fontSize: 16px) {
     font-size: $fontSize;
     line-height: $fontSize + 10px;
@@ -203,11 +171,8 @@ body {
 
 .title--big {
     @include title(44px);
-    font-family: "Game of Thrones", sans-serif; /* Sua fonte principal */
-        font-feature-settings: 'liga' 1, 'calt' 0; /* Ativa ligaduras e desativa alternativas contextuais */
-    
-    
-    
+    font-family: "Game of Thrones", sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 0;
 }
 
 .title {
