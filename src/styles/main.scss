@@ -37,7 +37,7 @@ body {
             margin-top: 50px;
             display: flex;
             align-items: center;
-            margin-right: 10px;
+            margin-right: 20px;
     
             li {
                 margin-right: 20px;
@@ -57,21 +57,90 @@ body {
         text-align: center;
         margin-top: 20px;
         font-family:"Game of Thrones",  Arial, sans-serif;
+        
     }
     
     section{
         padding: 20px;
-        
-    }
-    p{  
-        text-align: center;
-        margin-top: 20px;
-        color: variaveis.$corTextoPrincipal;
-    
-        &.personagem{
-            margin-top: 5px;
+
+        p{  
+            text-align: justify;
+            margin-top: 20px;
+            color: variaveis.$corTextoPrincipal;
+            font-size: 18px;
+            
+            &.personagem{
+                margin-top: 5px;
+            }
+
+            &.text--big{
+                margin-right: 100px;
+                margin-left: 100px;
+            }
         }
     }
+    
+    .sobre_o_livro {
+        > div {
+            .content-wrapper {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 20px; // Espaçamento entre a imagem e o texto
+                
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .center-img {
+                    max-width: 200px; // Tamanho máximo da imagem
+                    height: auto;
+                }
+    
+                .text-wrapper {
+                    max-width: 900px; // Largura máxima do texto
+                }
+            }
+        }
+    
+        .sinopse-livro {
+            margin-bottom: 20px;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+        
+        .title--small {
+            margin-top: 0;
+        }
+    
+        .text--big {
+            margin-top: 10px;
+        }
+
+        .comprar_livro {
+            padding: 15px 30px;
+            
+            font-size: 18px;
+            background-color: variaveis.$corBotao;
+            color: #D2B48C;
+            border: solid;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Game of Thrones';
+            text-transform: uppercase;
+            width: 500px;
+            margin-left: 50px;
+            justify-content: center;
+            
+            &:hover {
+                background-color: variaveis.$corBotaoHover;
+            }
+        }
+        
+    }
+    
 
     // mixins
 @mixin text($fontSize: 16px) {
