@@ -8,11 +8,46 @@
     text-align: center;
     background-size: cover; // Cobertura total do fundo
 
+    @media (max-width: 1199px) {
+        // Tablets em paisagem e desktops menores
+        background-image: url(../images/hod-background_tablet_landscape.avif);
+        background-size: cover; 
+        padding: 5vw;
+    }
+
+    @media (max-width: 991px) {
+        // Tablets em retrato
+        background-image: url(../images/hod-background_tablet_portrait.avif);
+        background-size: cover;
+        padding: 4vw;
+    }
+
+    @media (max-width: 767px) {
+        // Smartphones grandes
+        background-image: url(../images/hod_celular.avif); // Imagem de fundo para celular
     @media (max-width: 768px) {
         background-image: url(../images/hero_celular.jpeg); // Imagem de fundo para celular
         padding-top: calc(50vw + 25px); // Cálculo do espaçamento superior
         background-size: contain; // Tamanho de imagem de fundo para celular
         background-repeat: no-repeat; // Não repetir a imagem de fundo
         margin-top: -55px; // Margem superior negativa
+    }
+
+    @media (max-width: 575px) {
+        // Smartphones pequenos
+        background-image: url(../images/hod_celular.avif);
+        padding-top: calc(60vw + 20px); // Ajuste do espaçamento superior para telas menores
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: -45px; // Ajuste da margem superior negativa
+    }
+
+    @media (max-width: 375px) {
+        // iPhones pequenos
+        background-image: url(../images/hod_celular.avif);
+        padding-top: calc(70vw + 15px); // Ajuste do espaçamento superior para telas muito pequenas
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: -35px; // Ajuste da margem superior negativa
     }
 }

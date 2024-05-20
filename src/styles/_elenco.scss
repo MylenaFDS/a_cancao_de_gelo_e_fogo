@@ -1,5 +1,4 @@
 @use 'variaveis';
-
 .elenco {
     .carousel-container {
         position: relative;
@@ -8,23 +7,19 @@
         margin-left: auto;
         margin-right: auto; // Centraliza horizontalmente o carrossel
         max-width: 1200px; // Define uma largura máxima para o carrossel
-
         .carousel {
             display: flex;
             transition: transform 0.5s ease;
             gap: 20px; // Espaçamento entre os cards
             max-width: 1200px;
-
             &-item {
                 flex: 0 0 calc(25% - 20px); // Largura de 25% menos o espaço entre as imagens
                 padding: 20px;
-
                 img {
                     width: 200px; // Ajusta a largura da imagem para preencher o card
                     height: 200px; // Altura automática para manter a proporção
                     border-radius: 5px;
                 }
-
                 .card {
                     margin-left: auto;
                     width: 220px; // Define a largura do card como 100% do contêiner
@@ -34,7 +29,6 @@
                     padding: 10px;
                     cursor: pointer;
                     transition: box-shadow 0.3s ease; // Transição suave
-
                     &:hover {
                         box-shadow: 0 4px 8px 16px #fff; // Sombra mais pronunciada ao passar o mouse
                         background-color: #8b0000;
@@ -42,7 +36,6 @@
                 }
             }
         }
-
         .carousel-btn {
             position: absolute;
             top: 50%;
@@ -54,21 +47,17 @@
             cursor: pointer;
             z-index: 1;
             font-size: 2rem;
-
             &.prev-btn {
                 left: -20px; // Posiciona o botão de anterior à esquerda
             }
-
             &.next-btn {
                 right: -20px; // Posiciona o botão de próximo à direita
             }
         }
-
         .carousel-indicators {
             display: flex;
             justify-content: center; /* Centraliza horizontalmente */
             margin-top: 10px; /* Adicione um espaçamento superior conforme necessário */
-
             button {
                 margin: 0 5px; /* Adicione um espaçamento horizontal entre os botões conforme necessário */
                 padding: 5px;
@@ -76,11 +65,95 @@
                 background-color: variaveis.$corBotaoIndicador;
                 border: none;
                 outline: none;
-
                 &.active {
                     background-color: variaveis.$corBotaoIndicadorHover; /* Cor do indicador ativo */
                 }
             }
+        }
+    }
+
+    // Media Queries
+
+    @media (max-width: 1199px) {
+        .carousel {
+            &-item {
+                flex: 0 0 calc(33.33% - 20px); // 3 itens por linha
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        .carousel-container {
+            max-width: 900px; // Ajuste da largura máxima para tablets
+        }
+
+        .carousel {
+            &-item {
+                flex: 0 0 calc(50% - 20px); // 2 itens por linha
+            }
+        }
+
+        .carousel-btn {
+            font-size: 1.5rem;
+            &.prev-btn {
+                left: 0; // Ajuste para caber na tela menor
+            }
+
+            &.next-btn {
+                right: 0; // Ajuste para caber na tela menor
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .carousel-container {
+            max-width: 600px; // Ajuste da largura máxima para smartphones grandes
+        }
+
+        .carousel {
+            &-item {
+                flex: 0 0 calc(100% - 20px); // 1 item por linha
+                padding: 10px;
+
+                img {
+                    width: 100%; // Ajusta a largura da imagem para preencher o card
+                    height: auto; // Mantém a proporção da imagem
+                }
+
+                .card {
+                    width: 100%; // Ajusta a largura do card para preencher o contêiner
+                }
+            }
+        }
+
+        .carousel-btn {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .carousel-container {
+            max-width: 100%; // Ajuste da largura máxima para smartphones pequenos
+            padding: 0 10px; // Adiciona um pouco de padding horizontal
+        }
+
+        .carousel {
+            &-item {
+                padding: 5px;
+
+                img {
+                    width: 100%; // Ajusta a largura da imagem para preencher o card
+                    height: auto; // Mantém a proporção da imagem
+                }
+
+                .card {
+                    width: 100%; // Ajusta a largura do card para preencher o contêiner
+                }
+            }
+        }
+
+        .carousel-btn {
+            font-size: 1rem;
         }
     }
 }
