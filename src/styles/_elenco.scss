@@ -10,10 +10,10 @@
         .carousel {
             display: flex;
             transition: transform 0.5s ease;
-            gap: 20px; // Espaçamento entre os cards
+            gap: 10px; // Espaçamento entre os cards
             max-width: 1200px;
             &-item {
-                flex: 0 0 calc(25% - 20px); // Largura de 25% menos o espaço entre as imagens
+                flex: 0 0 calc(25% - 10px); // Largura de 25% menos o espaço entre as imagens
                 padding: 20px;
                 img {
                     width: 200px; // Ajusta a largura da imagem para preencher o card
