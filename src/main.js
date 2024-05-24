@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let counter = 0;
 
     function updateCarousel() {
-        const totalSlides = 1; // Dividido em 3 slides
+        const totalSlides = 3; // Dividido em 3 slides
         const percentage = (100 / totalSlides) * counter;
         carousel.style.transform = `translateX(-${percentage}%)`;
         updateButtonsVisibility();
