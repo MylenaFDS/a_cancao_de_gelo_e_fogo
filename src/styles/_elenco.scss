@@ -11,7 +11,7 @@
             display: flex;
             transition: transform 0.5s ease;
             gap: 5px; // Espaçamento entre os cards
-            max-width: 1200px;
+            
             &-item {
                 flex: 0 0 calc(25% - 5px); // Largura de 25% menos o espaço entre as imagens
                 padding: 10px;
