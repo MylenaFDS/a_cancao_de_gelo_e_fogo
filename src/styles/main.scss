@@ -124,7 +124,7 @@ body {
         }
         
         .comprar_livro {
-            padding: 15px;
+            padding: 10px;
             font-size: 18px;
             background-color: variaveis.$corBotao;
             color: #D2B48C;
@@ -134,7 +134,7 @@ body {
             transition: background-color 0.3s;
             font-family: 'Game of Thrones';
             text-transform: uppercase;
-            width: 500px;
+            width: 490px;
             text-align: center;
         
             &:hover {
