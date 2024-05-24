@@ -4,7 +4,8 @@
         position: relative;
         overflow: hidden;
         margin-top: 44px;
-       
+        margin-left: 20px;
+        margin-right: 20px; // Centraliza horizontalmente o carrossel
         max-width: 1200px; // Define uma largura máxima para o carrossel
         .carousel {
             display: flex;
