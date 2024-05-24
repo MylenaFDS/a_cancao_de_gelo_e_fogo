@@ -78,7 +78,7 @@
         
 
         .temporada_1-button {
-            padding: 15px 30px;
+            padding: 15px;
             font-size: 18px;
             background-color: variaveis.$corBotao;
             color: #D2B48C;
@@ -102,6 +102,7 @@
         .temporada_2-trailer-verdes,
         .temporada_2-trailer-pretos {
             padding: 15px;
+            margin-left: 50px;
             font-size: 18px;
             background-color: variaveis.$corBotao;
             color: #D2B48C;
@@ -111,11 +112,9 @@
             transition: background-color 0.3s;
             font-family: 'Game of Thrones';
             text-transform: uppercase;
-            max-width: 500px;
-            margin-left: 50px;
+            width: 490px;
             text-align: center;
-            
-
+        
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
