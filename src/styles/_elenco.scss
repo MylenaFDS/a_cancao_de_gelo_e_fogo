@@ -14,7 +14,7 @@
             max-width: 1200px;
             &-item {
                 flex: 0 0 calc(25% - 5px); // Largura de 25% menos o espaço entre as imagens
-                
+                padding: 10px;
                 
                 .card {
                     margin-left: 30px;
@@ -22,7 +22,7 @@
                     text-align: center;
                     border-radius: 8px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
-                    padding: 10px;
+                    
                     cursor: pointer;
                     transition: box-shadow 0.3s ease; // Transição suave
                     &:hover {
