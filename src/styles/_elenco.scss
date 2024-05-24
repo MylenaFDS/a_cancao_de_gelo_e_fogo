@@ -15,11 +15,7 @@
             &-item {
                 flex: 0 0 calc(25% - 5px); // Largura de 25% menos o espaço entre as imagens
                 padding: 10px;
-                img {
-                    width: 200px; // Ajusta a largura da imagem para preencher o card
-                    height: 200px; // Altura automática para manter a proporção
-                    border-radius: 5px;
-                }
+                
                 .card {
                     margin-left: 30px;
                     width: 220px; // Define a largura do card como 100% do contêiner
@@ -32,6 +28,12 @@
                     &:hover {
                         box-shadow: 0 4px 8px 16px #fff; // Sombra mais pronunciada ao passar o mouse
                         background-color: #8b0000;
+                    }
+
+                    img {
+                        width: 200px; // Ajusta a largura da imagem para preencher o card
+                        height: 200px; // Altura automática para manter a proporção
+                        border-radius: 5px;
                     }
                 }
             }
