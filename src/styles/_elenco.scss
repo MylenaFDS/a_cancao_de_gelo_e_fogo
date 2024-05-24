@@ -14,7 +14,7 @@
             max-width: 1200px;
             &-item {
                 flex: 0 0 calc(25% - 5px); // Largura de 25% menos o espaço entre as imagens
-                padding: 20px;
+                padding: 10px;
                 img {
                     width: 200px; // Ajusta a largura da imagem para preencher o card
                     height: 200px; // Altura automática para manter a proporção
