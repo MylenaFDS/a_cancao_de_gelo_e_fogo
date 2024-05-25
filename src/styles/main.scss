@@ -75,14 +75,13 @@ body {
             }
 
             &.text--big {
-                margin: 0 100px;
+                margin: 0 20px; // Alterado para evitar transbordamento horizontal
             }
         }
     }
 
     .sobre_o_livro {
         div {
-
             .content-wrapper {
                 display: flex;
                 align-items: flex-start;
@@ -95,10 +94,8 @@ body {
                 }
 
                 .center-img {
-                    max-width: 400px;
-                    height: 400px;
-                    min-height: 50px; /* Adiciona uma altura mínima para garantir que a imagem ocupe espaço */
-    
+                    max-width: 100%; // Alterado para evitar transbordamento horizontal
+                    height: auto; // Adicionado para manter a proporção da imagem
                 }
 
                 .text-wrapper {
@@ -108,22 +105,18 @@ body {
         }
 
         .sinopse-livro {
-            margin: 0 50px 20px;
+            margin: 0 20px 20px; // Alterado para evitar transbordamento horizontal
         }
 
         .title--small {
             margin-top: 20px;
-            margin-left: 300px;
-        }
-
-        .text--big {
-            margin-top: 10px;
+            text-align: center; // Centralizado horizontalmente
         }
 
         .comprar_livro-container {
             display: flex;
-            justify-content: center;  // Centraliza horizontalmente
-            margin-top: 20px;  // Adiciona espaço superior para separação, se necessário
+            justify-content: center;
+            margin-top: 20px;
         }
         
         .comprar_livro {
@@ -137,14 +130,13 @@ body {
             transition: background-color 0.3s;
             font-family: 'Game of Thrones';
             text-transform: uppercase;
-            width: 490px;
+            width: 100%; // Alterado para evitar transbordamento horizontal
             text-align: center;
         
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
         }
-        
     }
 }
 
