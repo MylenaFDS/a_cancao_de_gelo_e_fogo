@@ -5,19 +5,17 @@
     max-width: 1200px;
 
     h3 {
-        
         color: variaveis.$corTextoSecundario;
     }
 
     &__list {
         margin-top: 44px;
         display: none;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); // Melhoria na responsividade
         gap: 24px;
 
         div {
             max-width: 320px;
-            
             margin-top: 40px;
         }
 
@@ -28,9 +26,8 @@
         &__item {
             img {
                 max-width: 100%;
-                width: 320px;
+                width: 100%; // Ajuste para ocupar todo o espaço disponível
                 border-radius: 4px;
-                align-items: center;
             }
 
             h4 {
@@ -38,7 +35,6 @@
                 color: variaveis.$corTextoSecundario;
                 text-align: justify;
                 font-size: 20px;
-                
             }
 
             p {
@@ -64,7 +60,7 @@
             border-bottom: 5px solid transparent;
             text-align: center;
             margin-left: 100px;
-            
+
             &--is-active {
                 border-color: variaveis.$corTextoSecundario;
             }
@@ -75,7 +71,6 @@
         margin-top: 30px;
         display: flex;
         justify-content: center;
-        
 
         .temporada_1-button {
             padding: 15px;
@@ -88,21 +83,19 @@
             transition: background-color 0.3s;
             font-family: 'Game of Thrones';
             text-transform: uppercase;
-            
+
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
         }
     }
 
-
     ul {
         margin-top: 20px;
-        
+
         .temporada_2-trailer-verdes,
         .temporada_2-trailer-pretos {
             padding: 15px;
-            
             font-size: 18px;
             background-color: variaveis.$corBotao;
             color: #D2B48C;
@@ -112,15 +105,28 @@
             transition: background-color 0.3s;
             font-family: 'Game of Thrones';
             text-transform: uppercase;
-            width: 450px;
+            width: 100%; // Ajuste para ocupar todo o espaço disponível
             text-align: center;
-        
+
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
-            
+        }
+    }
+
+    // Melhoria no media query para ajustar o layout em telas menores
+    @media (max-width: 768px) {
+        &__tabs {
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0; // Removido para centralizar horizontalmente em telas menores
+        }
+
+        .button-container {
+            margin-top: 20px; // Reduzido o espaço superior
         }
     }
 }
+
 
 
