@@ -11,7 +11,7 @@
     &__list {
         margin-top: 44px;
         display: none;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); // Melhoria na responsividade
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 24px;
 
         div {
@@ -26,7 +26,7 @@
         &__item {
             img {
                 max-width: 100%;
-                width: 100%; // Ajuste para ocupar todo o espaço disponível
+                width: 100%;
                 border-radius: 4px;
             }
 
@@ -105,7 +105,7 @@
             transition: background-color 0.3s;
             font-family: 'Game of Thrones';
             text-transform: uppercase;
-            width: 100%; // Ajuste para ocupar todo o espaço disponível
+            width: 100%;
             text-align: center;
 
             &:hover {
@@ -114,19 +114,27 @@
         }
     }
 
-    // Melhoria no media query para ajustar o layout em telas menores
+    // Media query para tablets
+    @media (max-width: 1024px) {
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+    }
+
+    // Media query para telas menores que tablets
     @media (max-width: 768px) {
         &__tabs {
             flex-direction: column;
             align-items: center;
-            margin-left: 0; // Removido para centralizar horizontalmente em telas menores
+            margin-left: 0;
         }
 
         .button-container {
-            margin-top: 20px; // Reduzido o espaço superior
+            margin-top: 20px;
         }
     }
 }
+
 
 
 

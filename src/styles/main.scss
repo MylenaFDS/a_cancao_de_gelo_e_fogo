@@ -26,9 +26,10 @@ body {
         align-items: center;
         font-family: "Game of Thrones", Arial, sans-serif;
         font-size: 20px;
+        object-fit: cover;
 
         img {
-            max-width: 370px;
+            max-width: 100%; // Alterado para evitar transbordamento horizontal
             margin-left: 10px;
         }
 
@@ -99,7 +100,7 @@ body {
                 }
 
                 .text-wrapper {
-                    max-width: 500px;
+                    max-width: 100%; // Alterado para evitar transbordamento horizontal
                 }
             }
         }
