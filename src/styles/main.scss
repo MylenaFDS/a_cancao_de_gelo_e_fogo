@@ -29,7 +29,7 @@ body {
         object-fit: cover;
 
         img {
-            max-width: 100%; // Alterado para evitar transbordamento horizontal
+            max-width: 100%;
             margin-left: 10px;
         }
 
@@ -76,7 +76,7 @@ body {
             }
 
             &.text--big {
-                margin: 0 20px; // Alterado para evitar transbordamento horizontal
+                margin: 0 20px;
             }
         }
     }
@@ -95,23 +95,23 @@ body {
                 }
 
                 .center-img {
-                    max-width: 100%; // Alterado para evitar transbordamento horizontal
-                    height: auto; // Adicionado para manter a proporção da imagem
+                    max-width: 100%;
+                    height: auto;
                 }
 
                 .text-wrapper {
-                    max-width: 100%; // Alterado para evitar transbordamento horizontal
+                    max-width: 100%;
                 }
             }
         }
 
         .sinopse-livro {
-            margin: 0 20px 20px; // Alterado para evitar transbordamento horizontal
+            margin: 0 20px 20px;
         }
 
         .title--small {
             margin-top: 20px;
-            text-align: center; // Centralizado horizontalmente
+            text-align: center;
         }
 
         .comprar_livro-container {
@@ -131,12 +131,128 @@ body {
             transition: background-color 0.3s;
             font-family: 'Game of Thrones';
             text-transform: uppercase;
-            max-width: 100%; // Alterado para evitar transbordamento horizontal
+            max-width: 100%;
             text-align: center;
         
             &:hover {
                 background-color: variaveis.$corBotaoHover;
             }
+        }
+    }
+}
+
+// Media queries
+@media (max-width: 320px) {
+    body {
+        nav {
+            font-size: 14px;
+
+            ul {
+                flex-direction: column;
+                margin-top: 20px;
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        section p {
+            font-size: 16px;
+        }
+
+        .comprar_livro {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        nav {
+            font-size: 16px;
+
+            ul {
+                flex-direction: column;
+                margin-top: 30px;
+
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        section p {
+            font-size: 16px;
+        }
+
+        .comprar_livro {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        nav {
+            font-size: 18px;
+
+            ul {
+                flex-direction: column;
+                margin-top: 40px;
+
+                li {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        section p {
+            font-size: 16px;
+        }
+
+        .comprar_livro {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        nav {
+            font-size: 18px;
+
+            ul {
+                margin-top: 30px;
+            }
+        }
+
+        section p {
+            font-size: 18px;
+        }
+
+        .comprar_livro {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        nav {
+            font-size: 20px;
+
+            ul {
+                margin-top: 40px;
+            }
+        }
+
+        section p {
+            font-size: 18px;
+        }
+
+        .comprar_livro {
+            font-size: 18px;
         }
     }
 }
