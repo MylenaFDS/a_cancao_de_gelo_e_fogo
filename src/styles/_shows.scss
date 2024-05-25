@@ -4,6 +4,7 @@
     padding: 2vw 5.6vw;
     max-width: 1200px;
     object-fit: cover;
+
     h3 {
         color: variaveis.$corTextoSecundario;
     }
@@ -114,27 +115,138 @@
         }
     }
 
-    // Media query para tablets
-    @media (max-width: 1024px) {
-        &__list {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-    }
+    // Media queries
 
-    // Media query para telas menores que tablets
-    @media (max-width: 768px) {
+    // Para smartphones pequenos
+    @media (max-width: 320px) {
+        padding: 2vw 3vw;
+
         &__tabs {
             flex-direction: column;
             align-items: center;
             margin-left: 0;
         }
 
+        &__button {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+        }
+
         .button-container {
             margin-top: 20px;
         }
+
+        .temporada_1-button,
+        .temporada_2-trailer-verdes,
+        .temporada_2-trailer-pretos {
+            font-size: 14px;
+            padding: 10px;
+        }
+    }
+
+    // Para smartphones maiores
+    @media (max-width: 480px) {
+        padding: 2vw 4vw;
+
+        &__tabs {
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0;
+        }
+
+        &__button {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .temporada_1-button,
+        .temporada_2-trailer-verdes,
+        .temporada_2-trailer-pretos {
+            font-size: 16px;
+            padding: 12px;
+        }
+    }
+
+    // Para tablets
+    @media (max-width: 768px) {
+        padding: 2vw 5vw;
+
+        &__tabs {
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0;
+        }
+
+        &__button {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .temporada_1-button,
+        .temporada_2-trailer-verdes,
+        .temporada_2-trailer-pretos {
+            font-size: 16px;
+            padding: 12px;
+        }
+    }
+
+    // Para desktops pequenos
+    @media (max-width: 992px) {
+        padding: 2vw 5.6vw;
+
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .button-container {
+            margin-top: 25px;
+        }
+
+        .temporada_1-button,
+        .temporada_2-trailer-verdes,
+        .temporada_2-trailer-pretos {
+            font-size: 18px;
+            padding: 14px;
+        }
+    }
+
+    // Para desktops grandes
+    @media (max-width: 1200px) {
+        padding: 2vw 5.6vw;
+
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .temporada_1-button,
+        .temporada_2-trailer-verdes,
+        .temporada_2-trailer-pretos {
+            font-size: 18px;
+            padding: 15px;
+        }
     }
 }
-
-
-
-
