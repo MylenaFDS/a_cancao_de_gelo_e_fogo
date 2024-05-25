@@ -130,7 +130,7 @@ body {
             transition: background-color 0.3s;
             font-family: 'Game of Thrones';
             text-transform: uppercase;
-            width: 100%; // Alterado para evitar transbordamento horizontal
+            max-width: 100%; // Alterado para evitar transbordamento horizontal
             text-align: center;
         
             &:hover {
