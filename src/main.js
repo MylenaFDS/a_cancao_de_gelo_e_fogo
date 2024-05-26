@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Menu hambúrguer
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+    });
+
+    // Carrossel
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     const carousel = document.querySelector('.carousel');
@@ -7,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let counter = 0;
 
     function updateCarousel() {
-        const totalSlides = 1; //
+        const totalSlides = 1; // Supondo que você tenha 1 slide. Ajuste conforme necessário.
         const percentage = (100 / totalSlides) * counter;
         carousel.style.transform = `translateX(-${percentage}%)`;
         updateButtonsVisibility();
@@ -47,9 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateCarousel();
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Tabs
     const buttons = document.querySelectorAll('[data-tab-button]');
     const tabsContainer = document.querySelectorAll('[data-tab-id]');
     const watchButton = document.getElementById('watch-full-season-button');
@@ -73,12 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function removeBotaoAtivo() {
         buttons.forEach(button => button.classList.remove('shows__tabs__button--is-active'));
     }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Mostrar botão assistir
     const tabButtons = document.querySelectorAll('.shows__tabs__button');
-    const watchButton = document.getElementById('watch-full-season-button');
-
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
             tabButtons.forEach(btn => btn.classList.remove('shows__tabs__button--is-active'));

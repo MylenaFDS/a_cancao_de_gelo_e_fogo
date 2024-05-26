@@ -27,18 +27,32 @@ body {
         font-family: "Game of Thrones", Arial, sans-serif;
         font-size: 20px;
         object-fit: cover;
-
+        position: relative;
+        padding: 10px 20px;
+        
         img {
-            max-width: 100%;
+            max-width: 200px;
             margin-left: 10px;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            
+            .bar {
+                width: 25px;
+                height: 3px;
+                background-color: variaveis.$corBotoesNav;
+                margin: 4px 0;
+                transition: 0.3s;
+            }
         }
 
         ul {
             list-style-type: none;
-            margin-top: 50px;
             display: flex;
             align-items: center;
-            margin-right: 20px;
 
             li {
                 margin-right: 20px;
@@ -53,6 +67,31 @@ body {
                 }
             }
         }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            ul {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: variaveis.$corDeFundo;
+                display: none;
+
+                li {
+                    margin: 15px 0;
+                    text-align: center;
+                }
+            }
+
+            .nav-active {
+                display: flex;
+            }
+        }
     }
 
     h2, h3 {
@@ -64,6 +103,7 @@ body {
     section {
         padding: 20px;
         object-fit: cover;
+        
         p {
             text-align: center;
             justify-content: center;
