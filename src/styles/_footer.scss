@@ -3,7 +3,6 @@
 @use 'elenco';
 @use 'shows';
 
-
 /* _footer.scss */
 
 .footer {
@@ -17,5 +16,62 @@
         text-align: center;
         color: #999;
         font-size: 18px;
+    }
+
+    // Media queries
+
+    // Para smartphones pequenos
+    @media (max-width: 320px) {
+        padding: 8px;
+        font-size: 12px;
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+    }
+
+    // Para smartphones maiores
+    @media (max-width: 480px) {
+        padding: 8px;
+        font-size: 13px;
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 17px;
+        }
+    }
+
+    // Para tablets
+    @media (max-width: 768px) {
+        padding: 10px;
+        font-size: 14px;
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    }
+
+    // Para desktops pequenos
+    @media (max-width: 992px) {
+        padding: 12px;
+        font-size: 15px;
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    }
+
+    // Para desktops grandes
+    @media (max-width: 1200px) {
+        padding: 15px;
+        font-size: 16px;
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 18px;
+        }
     }
 }

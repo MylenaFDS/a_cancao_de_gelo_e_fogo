@@ -1,6 +1,5 @@
 @use 'variaveis'; // Importação do arquivo de variáveis
 
-
 .hero {
     padding: 5.6vw; // Espaçamento interno
     min-height: 50vh; // Altura mínima
@@ -8,15 +7,34 @@
     text-align: center;
     background-size: cover; // Cobertura total do fundo
     object-fit: cover;
-    
 
-    
+    // Media queries
 
-    @media (max-width: 767px) {
-        // Smartphones grandes
+    // Para smartphones pequenos
+    @media (max-width: 320px) {
         background-image: url(../images/hod_celular.avif); // Imagem de fundo para celular
-        object-fit: cover;
+        padding: 4vw; // Ajuste de padding
+    }
 
-}
+    // Para smartphones maiores
+    @media (max-width: 480px) {
+        background-image: url(../images/hod_celular.avif); // Imagem de fundo para celular
+        padding: 4.5vw; // Ajuste de padding
+    }
 
+    // Para tablets
+    @media (max-width: 768px) {
+        background-image: url(../images/hod_celular.avif); // Imagem de fundo para celular
+        padding: 5vw; // Ajuste de padding
+    }
+
+    // Para desktops pequenos
+    @media (max-width: 992px) {
+        padding: 5.6vw; 
+    }
+
+    // Para desktops grandes
+    @media (max-width: 1200px) {
+        padding: 5.6vw; 
+    }
 }

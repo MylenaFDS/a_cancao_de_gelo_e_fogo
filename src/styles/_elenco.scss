@@ -86,17 +86,63 @@
 
     // Media Queries
 
-    @media (max-width: 1024px) {
+    // Para smartphones pequenos
+    @media (max-width: 320px) {
+        .carousel-container {
+            max-width: 100%;
+            padding: 0 10px; // Ajuste do padding para smartphones pequenos
+        }
+
         .carousel {
             &-item {
-                flex: 1 0 calc(33.333% - 10px); // Ajuste para 3 itens por linha em tablets
+                flex: 1 0 100%; // 1 item por linha
             }
+
+            .card {
+                padding: 5px; // Ajuste do padding para smartphones pequenos
+            }
+
+            img {
+                height: auto; // Ajuste da altura da imagem
+            }
+        }
+
+        .carousel-btn {
+            font-size: 1rem; // Ajuste do tamanho da fonte para smartphones pequenos
         }
     }
 
+    // Para smartphones maiores
+    @media (max-width: 480px) {
+        .carousel-container {
+            max-width: 100%;
+            padding: 0 20px; // Ajuste do padding para smartphones maiores
+        }
+
+        .carousel {
+            &-item {
+                flex: 1 0 100%; // 1 item por linha
+            }
+
+            .card {
+                padding: 10px; // Ajuste do padding para smartphones maiores
+            }
+
+            img {
+                height: auto; // Ajuste da altura da imagem
+            }
+        }
+
+        .carousel-btn {
+            font-size: 1.2rem; // Ajuste do tamanho da fonte para smartphones maiores
+        }
+    }
+
+    // Para tablets
     @media (max-width: 768px) {
         .carousel-container {
-            max-width: 100%; // Ajuste da largura máxima para tablets e smartphones
+            max-width: 100%; // Ajuste da largura máxima para tablets
+            padding: 0 30px; // Ajuste do padding para tablets
         }
 
         .carousel {
@@ -106,31 +152,35 @@
         }
 
         .carousel-btn {
-            font-size: 1.2rem;
+            font-size: 1.5rem; // Ajuste do tamanho da fonte para tablets
         }
     }
 
-    @media (max-width: 480px) {
-        .carousel {
-            &-item {
-                flex: 1 0 100%; // 1 item por linha
-            }
-
-            .card {
-                padding: 0; // Remover padding para ajustar melhor no mobile
-            }
-
-            img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-            }
+    // Para desktops pequenos
+    @media (max-width: 992px) {
+        .carousel-container {
+            max-width: 100%;
+            padding: 0 40px; // Ajuste do padding para desktops pequenos
         }
 
-        .carousel-btn {
-            font-size: 1rem;
+        .carousel {
+            &-item {
+                flex: 1 0 calc(33.333% - 10px); // 3 itens por linha
+            }
+        }
+    }
+
+    // Para desktops grandes
+    @media (max-width: 1200px) {
+        .carousel-container {
+            max-width: 100%;
+            padding: 0 50px; // Ajuste do padding para desktops grandes
+        }
+
+        .carousel {
+            &-item {
+                flex: 1 0 calc(25% - 10px); // 4 itens por linha
+            }
         }
     }
 }
-
-
