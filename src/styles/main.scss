@@ -103,6 +103,7 @@ body {
     
             .nav-active {
                 margin-top: 0;
+                top: 100%;
                 max-height: 500px; // Defina um valor grande o suficiente para acomodar todos os links
             }
         }
