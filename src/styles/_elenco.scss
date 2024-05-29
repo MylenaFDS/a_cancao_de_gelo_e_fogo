@@ -4,10 +4,11 @@
   .carousel-container {
     position: relative;
     overflow: hidden;
+    object-fit: cover;
     margin-top: 44px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
+    margin-left: 40px;
+  
+    max-width: 1300px;
   }
 
   .carousel {
@@ -20,6 +21,7 @@
     .carousel-item {
       flex: 1 0 calc(25% - 5px);
       padding: 10px;
+      gap: 20px;
 
       .card {
         width: 100%;
@@ -59,11 +61,11 @@
     font-size: 2rem;
 
     &.prev-btn {
-      left: -20px;
+      left: -30px;
     }
 
     &.next-btn {
-      right: -20px;
+      right: -30px;
     }
   }
 
