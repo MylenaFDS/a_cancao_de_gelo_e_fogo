@@ -1,186 +1,117 @@
 @use 'variaveis';
 
 .elenco {
-    .carousel-container {
-        position: relative;
-        overflow: hidden;
-        margin-top: 44px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1200px;
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 44px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
 
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-            gap: 5px;
-            max-width: 100%;
-            
-            &-item {
-                flex: 1 0 calc(25% - 5px);
-                padding: 10px;
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 5px;
+    max-width: 100%;
+   
 
-                .card {
-                    width: 100%;
-                    text-align: center;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    padding: 10px;
-                    cursor: pointer;
-                    transition: box-shadow 0.3s ease;
+    .carousel-item {
+      flex: 1 0 calc(25% - 5px);
+      padding: 10px;
 
-                    &:hover {
-                        box-shadow: 4px #fff;
-                        background-color: #8b0000;
-                    }
+      .card {
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease;
 
-                    img {
-                        width: 100%;
-                        height: 200px;
-                        border-radius: 5px;
-                        object-fit: cover;
-                    }
-                }
-            }
+        &:hover {
+          box-shadow: 4px #fff;
+          background-color: #8b0000;
         }
 
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: transparent;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            z-index: 1;
-            font-size: 2rem;
-
-            &.prev-btn {
-                left: -20px;
-            }
-
-            &.next-btn {
-                right: -20px;
-            }
+        img {
+          width: 100%;
+          height: 200px;
+          border-radius: 5px;
+          object-fit: cover;
         }
+      }
+    }
+  }
 
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 2rem;
 
-            button {
-                margin: 0 5px;
-                padding: 5px;
-                cursor: pointer;
-                background-color: variaveis.$corBotaoIndicador;
-                border: none;
-                outline: none;
-
-                &.active {
-                    background-color: variaveis.$corBotaoIndicadorHover;
-                }
-            }
-        }
+    &.prev-btn {
+      left: -20px;
     }
 
-    // Media Queries
-
-    // Para smartphones pequenos
-    @media (max-width: 320px) {
-        .carousel-container {
-            max-width: 100%;
-            padding: 0 10px; // Ajuste do padding para smartphones pequenos
-        }
-
-        .carousel {
-            &-item {
-                flex: 1 0 100%; // 1 item por linha
-            }
-
-            .card {
-                padding: 5px; // Ajuste do padding para smartphones pequenos
-            }
-
-            img {
-                height: auto; // Ajuste da altura da imagem
-            }
-        }
-
-        .carousel-btn {
-            font-size: 1rem; // Ajuste do tamanho da fonte para smartphones pequenos
-        }
+    &.next-btn {
+      right: -20px;
     }
+  }
 
-    // Para smartphones maiores
-    @media (max-width: 480px) {
-        .carousel-container {
-            max-width: 100%;
-            padding: 0 20px; // Ajuste do padding para smartphones maiores
-        }
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 
-        .carousel {
-            &-item {
-                flex: 1 0 100%; // 1 item por linha
-            }
+    button {
+      margin: 0 5px;
+      padding: 5px;
+      cursor: pointer;
+      background-color: variaveis.$corBotaoIndicador;
+      border: none;
+      outline: none;
 
-            .card {
-                padding: 10px; // Ajuste do padding para smartphones maiores
-            }
-
-            img {
-                height: auto; // Ajuste da altura da imagem
-            }
-        }
-
-        .carousel-btn {
-            font-size: 1.2rem; // Ajuste do tamanho da fonte para smartphones maiores
-        }
+      &.active {
+        background-color: variaveis.$corBotaoIndicadorHover;
+      }
     }
+  }
 
-    // Para tablets
-    @media (max-width: 768px) {
-        .carousel-container {
-            max-width: 100%; // Ajuste da largura máxima para tablets
-            padding: 0 30px; // Ajuste do padding para tablets
-        }
+  // Media Queries
 
-        .carousel {
-            &-item {
-                flex: 1 0 calc(50% - 10px); // 2 itens por linha
-            }
-        }
-
-        .carousel-btn {
-            font-size: 1.5rem; // Ajuste do tamanho da fonte para tablets
-        }
+  // Para smartphones pequenos
+  @media (max-width: 480px) {
+    .carousel {
+      .carousel-item {
+        flex: 1 0 100%; // 1 item por linha
+      }
     }
+  }
 
-    // Para desktops pequenos
-    @media (max-width: 992px) {
-        .carousel-container {
-            max-width: 100%;
-            padding: 0 40px; // Ajuste do padding para desktops pequenos
-        }
-
-        .carousel {
-            &-item {
-                flex: 1 0 calc(33.333% - 10px); // 3 itens por linha
-            }
-        }
+  /* Para desktops */
+@media (min-width: 992px) {
+    .carousel-indicators .indicator-btn:nth-child(n+4) {
+        display: none; /* Oculta os botões indicadores a partir do quarto botão */
     }
+}
 
-    // Para desktops grandes
-    @media (max-width: 1200px) {
-        .carousel-container {
-            max-width: 100%;
-            padding: 0 50px; // Ajuste do padding para desktops grandes
-        }
-
-        .carousel {
-            &-item {
-                flex: 1 0 calc(25% - 10px); // 4 itens por linha
-            }
-        }
+  // Para desktops grandes
+  @media (min-width: 1201px) {
+    .carousel {
+      .carousel-item {
+        flex: 1 0 calc(25% - 10px); // 4 itens por linha
+      }
+      .carousel-indicators .indicator-btn:nth-child(n+4) {
+        display: none; /* Oculta os botões indicadores a partir do quarto botão */
     }
+    }
+  }
 }
