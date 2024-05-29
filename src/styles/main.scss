@@ -42,7 +42,7 @@ body {
             .bar {
                 width: 25px;
                 height: 3px;
-                background-color: variaveis.$corBotoesNav; // Use variáveis SCSS apropriadas
+                background-color: $corBotoesNav; // Use variáveis SCSS apropriadas
                 margin: 4px 0;
                 transition: 0.3s;
             }
@@ -74,7 +74,7 @@ body {
     
                 a {
                     text-decoration: none;
-                    color: variaveis.$corBotoesNav;
+                    color: $corBotoesNav;
                 }
             }
         }
@@ -90,7 +90,7 @@ body {
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: variaveis.$corDeFundo;
+                background-color: $corDeFundo;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease-out;
@@ -102,12 +102,11 @@ body {
             }
     
             .nav-active {
-                margin-top: 0;
-                top: 100%;
                 max-height: 500px; // Defina um valor grande o suficiente para acomodar todos os links
             }
         }
     }
+    
     
 
     h2, h3 {
