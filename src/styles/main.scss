@@ -26,53 +26,64 @@ body {
         align-items: center;
         font-family: "Game of Thrones", Arial, sans-serif;
         font-size: 20px;
-        object-fit: cover;
         position: relative;
         padding: 10px 20px;
-        
+    
         img {
             max-width: 200px;
             margin-left: 10px;
         }
-
+    
         .menu-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            
+    
             .bar {
                 width: 25px;
                 height: 3px;
-                background-color: variaveis.$corBotoesNav;
+                background-color: variaveis.$corBotoesNav; // Use variáveis SCSS apropriadas
                 margin: 4px 0;
                 transition: 0.3s;
             }
+    
+            &.active .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+    
+            &.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+    
+            &.active .bar:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
         }
-
+    
         ul {
             list-style-type: none;
             display: flex;
             align-items: center;
-
+    
             li {
                 margin-right: 20px;
-
+    
                 &:last-child {
                     margin-right: 0;
                 }
-
+    
                 a {
                     text-decoration: none;
                     color: variaveis.$corBotoesNav;
                 }
             }
         }
-
+    
         @media (max-width: 768px) {
             .menu-toggle {
                 display: flex;
             }
-
+    
             ul {
                 flex-direction: column;
                 position: absolute;
@@ -80,19 +91,23 @@ body {
                 left: 0;
                 width: 100%;
                 background-color: variaveis.$corDeFundo;
-                display: none;
-
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+    
                 li {
                     margin: 15px 0;
                     text-align: center;
                 }
             }
-
+    
             .nav-active {
-                display: flex;
+                margin-top: 0;
+                max-height: 500px; // Defina um valor grande o suficiente para acomodar todos os links
             }
         }
     }
+    
 
     h2, h3 {
         text-align: center;
