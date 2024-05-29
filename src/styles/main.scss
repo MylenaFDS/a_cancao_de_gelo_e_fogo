@@ -42,7 +42,7 @@ body {
             .bar {
                 width: 25px;
                 height: 3px;
-                background-color: $corBotoesNav; // Use variáveis SCSS apropriadas
+                background-color: variaveis.$corBotoesNav; // Use variáveis SCSS apropriadas
                 margin: 4px 0;
                 transition: 0.3s;
             }
@@ -74,7 +74,7 @@ body {
     
                 a {
                     text-decoration: none;
-                    color: $corBotoesNav;
+                    color: variaveis.$corBotoesNav;
                 }
             }
         }
@@ -90,7 +90,7 @@ body {
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: $corDeFundo;
+                background-color: variaveis.$corDeFundo;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.3s ease-out;
