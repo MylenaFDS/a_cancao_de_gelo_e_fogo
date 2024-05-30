@@ -97,6 +97,7 @@
     .carousel {
       .carousel-item {
         flex: 1 0 100%; // 1 item por linha
+        padding: 10px;
       }
     }
   }
@@ -107,8 +108,10 @@
     }
 
     .carousel {
+      gap: 10px;
       .carousel-item {
         flex: 1 0 100%; // 1 item por linha
+        padding: 10px;
       }
     }
   }
