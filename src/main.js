@@ -25,19 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalSlides = window.innerWidth < 992 ? slides.length : Math.ceil(slides.length / 4);
         const percentage = (100 / totalSlides) * counter;
         carousel.style.transform = `translateX(-${percentage}%)`;
-        updateButtonsVisibility();
         updateIndicators();
-    }
-
-    function updateButtonsVisibility() {
-        const isMobile = window.innerWidth < 992;
-        if (isMobile) {
-            prevBtn.style.display = counter === 0 ? 'none' : 'block';
-            nextBtn.style.display = counter === slides.length - 1 ? 'none' : 'block';
-        } else {
-            prevBtn.style.display = counter === 0 ? 'none' : 'block';
-            nextBtn.style.display = counter === Math.ceil(slides.length / 4) - 1 ? 'none' : 'block';
-        }
     }
 
     function updateIndicators() {
