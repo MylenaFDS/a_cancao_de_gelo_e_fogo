@@ -90,7 +90,6 @@
 
   // Para smartphones pequenos
   @media (max-width: 480px) {
-    gap: 10px;
     .carousel-btn {
       display: none; // Remova as setas de navegação no mobile
     }
@@ -98,7 +97,6 @@
     .carousel {
       .carousel-item {
         flex: 1 0 100%; // 1 item por linha
-        padding: 10px;
       }
     }
   }
@@ -109,10 +107,8 @@
     }
 
     .carousel {
-      gap: 10px;
       .carousel-item {
         flex: 1 0 100%; // 1 item por linha
-        padding: 10px;
       }
     }
   }
