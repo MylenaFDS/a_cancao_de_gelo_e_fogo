@@ -1,32 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Menu hambúrguer
     const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-links');
 
-if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('nav-active');
-        menuToggle.classList.toggle('active');
-
-        // Adiciona ou remove a altura máxima para a transição suave
-        if (navLinks.classList.contains('nav-active')) {
-            navLinks.style.maxHeight = navLinks.scrollHeight + 'px';
-        } else {
-            navLinks.style.maxHeight = '0';
-        }
     });
-
-    // Remove a altura máxima quando a janela é redimensionada para garantir a exibição correta
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            navLinks.style.maxHeight = '';
-        } else if (!navLinks.classList.contains('nav-active')) {
-            navLinks.style.maxHeight = '0';
-        }
-    });
-} else {
-    console.error('Menu toggle button or nav links element not found');
-}
-
 
     // Carrossel
     const prevBtn = document.querySelector('.prev-btn');
