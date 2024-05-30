@@ -15,14 +15,13 @@
     transition: transform 0.5s ease;
     gap: 5px;
     max-width: 100%;
-   
+    will-change: transform;
 
     .carousel-item {
       flex: 1 0 calc(25% - 5px);
       padding: 10px;
 
       .card {
-        
         width: 100%;
         justify-content: center;
         text-align: center;
@@ -91,6 +90,10 @@
 
   // Para smartphones pequenos
   @media (max-width: 480px) {
+    .carousel-btn {
+      display: none; // Remova as setas de navegação no mobile
+    }
+
     .carousel {
       .carousel-item {
         flex: 1 0 100%; // 1 item por linha
@@ -99,11 +102,11 @@
   }
 
   /* Para desktops */
-@media (min-width: 992px) {
+  @media (min-width: 992px) {
     .carousel-indicators .indicator-btn:nth-child(n+4) {
-        display: none; /* Oculta os botões indicadores a partir do quarto botão */
+      display: none; // Oculta os botões indicadores a partir do quarto botão
     }
-}
+  }
 
   // Para desktops grandes
   @media (min-width: 1201px) {
@@ -112,8 +115,8 @@
         flex: 1 0 calc(25% - 10px); // 4 itens por linha
       }
       .carousel-indicators .indicator-btn:nth-child(n+4) {
-        display: none; /* Oculta os botões indicadores a partir do quarto botão */
-    }
+        display: none; // Oculta os botões indicadores a partir do quarto botão
+      }
     }
   }
 }

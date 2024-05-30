@@ -14,9 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = carousel.querySelectorAll('.carousel-item');
     const indicators = document.querySelectorAll('.carousel-indicators button');
     let counter = 0;
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
+    const touchThreshold = 100;
 
     function updateCarousel() {
-        const totalSlides = 1; // Supondo que você tenha 1 slide. Ajuste conforme necessário.
+        const totalSlides = window.innerWidth < 992 ? slides.length : Math.ceil(slides.length / 4);
         const percentage = (100 / totalSlides) * counter;
         carousel.style.transform = `translateX(-${percentage}%)`;
         updateButtonsVisibility();
@@ -24,25 +30,84 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateButtonsVisibility() {
-        // Verifica se estamos em um dispositivo móvel ou desktop
-        const isMobile = window.innerWidth < 992; // 992px é uma largura típica para a quebra entre dispositivos móveis e desktops
-    
+        const isMobile = window.innerWidth < 992;
         if (isMobile) {
-            // Para dispositivos móveis (12 slides)
             prevBtn.style.display = counter === 0 ? 'none' : 'block';
-            nextBtn.style.display = counter === 11 ? 'none' : 'block';
+            nextBtn.style.display = counter === slides.length - 1 ? 'none' : 'block';
         } else {
-            // Para desktops (3 slides)
             prevBtn.style.display = counter === 0 ? 'none' : 'block';
-            nextBtn.style.display = counter === 2 ? 'none' : 'block';
+            nextBtn.style.display = counter === Math.ceil(slides.length / 4) - 1 ? 'none' : 'block';
         }
     }
-    
+
     function updateIndicators() {
         indicators.forEach((indicator, index) => {
             indicator.classList.toggle('active', index === counter);
         });
     }
+
+    function getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+        setSliderPosition();
+        if (isDragging) requestAnimationFrame(animation);
+    }
+
+    function setSliderPosition() {
+        carousel.style.transform = `translateX(${currentTranslate}px)`;
+    }
+
+    function touchStart(index) {
+        return function(event) {
+            isDragging = true;
+            startPos = getPositionX(event);
+            animationID = requestAnimationFrame(animation);
+            carousel.classList.add('grabbing');
+        };
+    }
+
+    function touchMove(event) {
+        if (isDragging) {
+            const currentPosition = getPositionX(event);
+            currentTranslate = prevTranslate + currentPosition - startPos;
+        }
+    }
+
+    function touchEnd() {
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        const movedBy = currentTranslate - prevTranslate;
+
+        if (movedBy < -touchThreshold && counter < slides.length - 1) {
+            counter++;
+        }
+        if (movedBy > touchThreshold && counter > 0) {
+            counter--;
+        }
+
+        setPositionByIndex();
+        carousel.classList.remove('grabbing');
+    }
+
+    function setPositionByIndex() {
+        currentTranslate = counter * -carousel.clientWidth;
+        prevTranslate = currentTranslate;
+        setSliderPosition();
+        updateCarousel();
+    }
+
+    carousel.addEventListener('mousedown', touchStart());
+    carousel.addEventListener('mouseup', touchEnd);
+    carousel.addEventListener('mousemove', touchMove);
+    carousel.addEventListener('mouseleave', () => {
+        if (isDragging) touchEnd();
+    });
+
+    carousel.addEventListener('touchstart', touchStart());
+    carousel.addEventListener('touchend', touchEnd);
+    carousel.addEventListener('touchmove', touchMove);
 
     prevBtn.addEventListener('click', () => {
         if (counter > 0) {
@@ -52,13 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     nextBtn.addEventListener('click', () => {
-        const totalSlides = window.innerWidth < 992 ? 12 : 3; // Verifica se é dispositivo móvel ou desktop
-        if (counter < totalSlides - 1) { // Subtrai 1 para garantir que o último slide seja acessível
+        const totalSlides = window.innerWidth < 992 ? slides.length : Math.ceil(slides.length / 4);
+        if (counter < totalSlides - 1) {
             counter++;
             updateCarousel();
         }
     });
-    
 
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
@@ -94,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         buttons.forEach(button => button.classList.remove('shows__tabs__button--is-active'));
     }
 
-    // Mostrar botão assistir
     const tabButtons = document.querySelectorAll('.shows__tabs__button');
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
