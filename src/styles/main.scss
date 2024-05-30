@@ -20,14 +20,15 @@ body {
     background-color: variaveis.$corDeFundo;
     overflow-x: hidden;
 
-    header{nav {
+    header{
+        nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-family: "Game of Thrones", Arial, sans-serif;
         font-size: 20px;
         position: relative;
-        
+        margin-right: 20px;
     
         img {
             max-width: 200px;
